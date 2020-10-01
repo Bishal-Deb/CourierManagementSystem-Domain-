@@ -11,7 +11,7 @@ public class lab1 {
 
       if (stdin.next().startsWith("y")){
       	for (int i = 0 ; i < 5; i++ ) {
-           System.out.println("Enter the details fot the new order: ");
+           System.out.println("Enter the details for the new order: ");
            array[i] = input.next();
         }
         
