@@ -52,9 +52,9 @@ class Admin extends display {
 
   @Override
   public void display(){
-  	   System.out.println("Customer Id is - " + this.admin_id);
+  	 System.out.println("Aministrator Id is - " + this.admin_id);
 	   System.out.println("Name is - " + this.name);
-	   System.out.println("addr is - " + this.addr);
+	   System.out.println("Address is - " + this.addr);
 	   if (this.email != null || this.email != "") {
 	       System.out.println("Email is - " + this.email);
 	   }
@@ -88,13 +88,13 @@ class Signup extends Admin {
       // System.exit(0);
     }
 
-	System.out.println("Hello: " + super.name);
+	System.out.println("\nHave a Nice Day!! " + super.name);
   }
 }
 public class welcome {
   public static Admin getData(String method) {
     Scanner sc = new Scanner(System.in);
-    System.out.println("------Enter Details of Customer----");
+    System.out.println("------Enter Details------");
 
     Random rand = new Random();
     int cid= rand.nextInt(1000);
@@ -150,8 +150,8 @@ public class welcome {
     }
 
     Admin new_admin = new Admin();
-    //Admin ad1 = new Admin();
-    // Signup log = new Signup();
+    Signup log = new Signup();
+    
     Scanner sc = new Scanner(System.in);
     int ch, price;
 
@@ -176,7 +176,43 @@ public class welcome {
                     new_admin = getData("mobile");
                     break;
                 }
+            case 2:
 
+                if (new_admin.getpwdword() == null) {
+                    System.out.println("-- No Data Found, Register First --\n\n");
+                    System.out.println("1. Register using email ");
+                    System.out.println("2. Register using mobile ");
+                    System.out.print("Enter Your Choice: ");
+                    int choice = sc.nextInt();
+                    if (choice == 1) {
+                        new_admin = getData("email");
+                    }
+                } 
+                System.out.println("Enter Login details");
+                System.out.println("1. Login with mobile ");
+                System.out.println("2. Login with Email ");
+                System.out.println("Enter your choice: ");
+                int chl = sc.nextInt();
+                if (chl == 1) {
+                    System.out.print("Enter your mobile no: ");
+                    Long mobile = sc.nextLong();
+                    Console console = System.console();
+                    String pwdwordArray = new String(console.readPassword("Enter your password: "));
+                    log.login(mobile, pwdwordArray,new_admin);
+                }
+                if (ch == 2) {
+                    sc.nextLine();
+                    System.out.print("Enter your email id: ");
+                    String email = sc.nextLine();
+                    Console console = System.console();
+                    String pwdwordArray = new String(console.readPassword("Enter your password: "));
+                    log.login(email, pwdwordArray,new_admin);
+                }
+                break;
+              
+              case 3:
+                new_admin.display();
+                break;
 	        }
 	    } while (ch != 4);
 
