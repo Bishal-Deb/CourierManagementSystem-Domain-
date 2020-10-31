@@ -140,7 +140,7 @@ public class welcome {
       email = sc.next();
       String regex = "^[\\w-\\.+]*[\\w-\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
       if (email.matches(regex) == false) {
-        System.out.println("wrong email");
+        System.out.println("Enter a proper Email Id.");
         System.exit(0);
       }
 
