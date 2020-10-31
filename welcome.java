@@ -3,28 +3,6 @@ import java.io.*;
 
 abstract class display{
 	public abstract void display();
-	   // 	  private int admin_id;
-		  // private String name;
-	// 	  private String addr;
-	// 	  private String email;
-	// 	  private Long mobile;
-	// 	  private String pwd;
-    
- //    display(int a_id,String a_name, String a_addr, String aEmail, Long mobileNo, String pwdword){
-
-	// admin_id = a_id;
- //    name = a_name;
- //    addr = a_addr;
- //    email = aEmail;
- //    mobile = mobileNo;
- //    pwd = pwdword;
-    
- //    }
-
- //     @Override
- //      public final String toString() {
- //           return this.pwd + "\n1."+ this.admin_id+"\n2."+this.name+"\n3."+ this.addr;
- //      }
 }
 
 class Admin extends display {
