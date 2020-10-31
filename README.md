@@ -1,5 +1,5 @@
 # Courier Management System
-### A Java based e-Learning Platform
+### A Java based Courier Management System(Lab works)- Implementation of various concepts
 
 Author:  
 **Bishal Deb**  
