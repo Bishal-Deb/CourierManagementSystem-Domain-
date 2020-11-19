@@ -155,69 +155,74 @@ public class welcome {
     Scanner sc = new Scanner(System.in);
     int ch, price;
 
-    do {
-        System.out.println("1.Register\n2.Login\n3.Display\n4.Exit");
-        System.out.println("Your choice : ");
-        ch = sc.nextInt();
+      try{
+          do {
+              System.out.println("1.Register\n2.Login\n3.Display\n4.Exit");
+              System.out.println("Your choice : ");
+              ch = sc.nextInt();
 
-        switch (ch) {
-            case 1:
-            	
-                System.out.println("1. Register using email ");
-                System.out.println("2. Register using mobile ");
-                System.out.print("Enter Your Choice: ");
-                int ch1 = sc.nextInt();
-                if (ch1 == 1) {
-                    new_admin = getData("email");
-                    break;
-                } 
-                else 
-                {
-                    new_admin = getData("mobile");
-                    break;
-                }
-            case 2:
+          switch (ch) {
+              case 1:
+              	
+                  System.out.println("1. Register using email ");
+                  System.out.println("2. Register using mobile ");
+                  System.out.print("Enter Your Choice: ");
+                  int ch1 = sc.nextInt();
+                  if (ch1 == 1) {
+                      new_admin = getData("email");
+                      break;
+                  } 
+                  else 
+                  {
+                      new_admin = getData("mobile");
+                      break;
+                  }
+              case 2:
 
-                if (new_admin.getpwdword() == null) {
-                    System.out.println("-- No Data Found, Register First --\n\n");
-                    System.out.println("1. Register using email ");
-                    System.out.println("2. Register using mobile ");
-                    System.out.print("Enter Your Choice: ");
-                    int choice = sc.nextInt();
-                    if (choice == 1) {
-                        new_admin = getData("email");
-                    }
-                } 
-                System.out.println("Enter Login details");
-                System.out.println("1. Login with mobile ");
-                System.out.println("2. Login with Email ");
-                System.out.println("Enter your choice: ");
-                int chl = sc.nextInt();
-                if (chl == 1) {
-                    System.out.print("Enter your mobile no: ");
-                    Long mobile = sc.nextLong();
-                    Console console = System.console();
-                    String pwdwordArray = new String(console.readPassword("Enter your password: "));
-                    log.login(mobile, pwdwordArray,new_admin);
-                }
-                if (ch == 2) {
-                    sc.nextLine();
-                    System.out.print("Enter your email id: ");
-                    String email = sc.nextLine();
-                    Console console = System.console();
-                    String pwdwordArray = new String(console.readPassword("Enter your password: "));
-                    log.login(email, pwdwordArray,new_admin);
-                }
-                break;
-              
-              case 3:
-                new_admin.display();
-                break;
-	        }
-	    } while (ch != 4);
+                  if (new_admin.getpwdword() == null) {
+                      System.out.println("-- No Data Found, Register First --\n\n");
+                      System.out.println("1. Register using email ");
+                      System.out.println("2. Register using mobile ");
+                      System.out.print("Enter Your Choice: ");
+                      int choice = sc.nextInt();
+                      if (choice == 1) {
+                          new_admin = getData("email");
+                      }
+                  } 
+                  System.out.println("Enter Login details");
+                  System.out.println("1. Login with mobile ");
+                  System.out.println("2. Login with Email ");
+                  System.out.println("Enter your choice: ");
+                  int chl = sc.nextInt();
+                  if (chl == 1) {
+                      System.out.print("Enter your mobile no: ");
+                      Long mobile = sc.nextLong();
+                      Console console = System.console();
+                      String pwdwordArray = new String(console.readPassword("Enter your password: "));
+                      log.login(mobile, pwdwordArray,new_admin);
+                  }
+                  if (ch == 2) {
+                      sc.nextLine();
+                      System.out.print("Enter your email id: ");
+                      String email = sc.nextLine();
+                      Console console = System.console();
+                      String pwdwordArray = new String(console.readPassword("Enter your password: "));
+                      log.login(email, pwdwordArray,new_admin);
+                  }
+                  break;
+                
+                case 3:
+                  new_admin.display();
+                  break;
+  	        }
+  	    } while (ch != 4);
 
-	// 
+      }
+      catch(Exception e){
 
+          System.out.println(e);
+
+      }
   }
 }
 

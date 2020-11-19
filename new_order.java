@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class lab1 {
+public class new_order {
    public static void main(String args[]) {
       Scanner input = new Scanner(System.in);
       Scanner stdin = new Scanner(System.in);
@@ -24,11 +24,15 @@ public class lab1 {
         stdin.close();
    }
    public static void printArray(String arr[]){
+      try {    
+          int n = arr.length;
 
-        int n = arr.length;
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-    	}
+          for (int i = 0; i < n; i++) {
+              System.out.print(arr[i] + " ");
+      	}
+      }
+      catch (ArrayIndexOutOfBoundsException e) { 
+            System.out.println("Array Index is Out Of Bounds"); 
+      } 
 	}
 }
