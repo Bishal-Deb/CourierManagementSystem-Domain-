@@ -34,7 +34,7 @@ class office extends Department
         }
         return isExists;
     }
-	
+    
 } 
 
 //derived class two 
@@ -53,31 +53,44 @@ class delivery extends Department
         }
         return isExists; 
     }
-	
+    
+}
+
+class MyException extends Exception 
+{ 
+    public MyException(String s) 
+    {                                                                         //user-defined Exception
+        // Call constructor of parent Exception 
+        super(s); 
+    } 
 } 
+
 
 // Driver class 
 public class checkDepartmentIncharge 
 { 
-	public static void main(String[] args) 
+    public static void main(String[] args) 
     {  
+        try
+        { 
+            
         String name="Check the Department Heads and the Numberof employees under him/her.";                                            //String class
         System.out.println("..................................................................");
         System.out.println(name);
         System.out.println(".................................................................."+"\n");
-		// creating office object 
-		Department s1 = new office("Sanjay Aggarwal"); 
-		
-		// creating delivery object 
-		Department s2 = new delivery("Dev Yadav"); 
+        // creating office object 
+        Department s1 = new office("Sanjay Aggarwal"); 
+        
+        // creating delivery object 
+        Department s2 = new delivery("Dev Yadav"); 
         
         StringBuffer s = new StringBuffer("Official");                                //StringBuffer class
         s.append(" work is managed by ");
         s.append(s1.getdeptName());
         s.append(":- ");
         s.append(s1.getOwnership());
-		System.out.println(s);
-		System.out.println("30 Official Staffs under him." + "\n");
+        System.out.println(s);
+        System.out.println("30 Official Staffs under him." + "\n");
         
         
         StringBuffer st = new StringBuffer("Delivery"); 
@@ -85,9 +98,20 @@ public class checkDepartmentIncharge
         st.append(s2.getdeptName());
         st.append(":- ");
         st.append(s2.getOwnership());
-		System.out.println(st);
-		System.out.println("20 employees under him.");
-		 
-		
-	} 
+        System.out.println(st);
+        System.out.println("20 employees under him.");
+
+        // Throw an object of user defined exception 
+            throw new MyException(""); 
+    
+       }
+       catch (MyException ex) 
+        { 
+            System.out.println("\nTHANK YOU!!"); 
+  
+            // Print the message from MyException object 
+            System.out.println(ex.getMessage()); 
+        }    
+        
+    } 
 } 
