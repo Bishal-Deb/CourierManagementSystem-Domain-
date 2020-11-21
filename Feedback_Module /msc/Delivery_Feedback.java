@@ -6,6 +6,28 @@ public class Delivery_Feedback
      public String DeliBoy_name;
      public int a,b,c;
      int sum=0;
+     int i = 5;
+
+    public void Timer()
+    {
+        System.out.println("Feedback Calculating.......\nPresenting in:");
+        while (i>0){
+          
+         System.out.println(i+"  Seconds");
+         try {
+           i--;
+           Thread.sleep(1000L);     //thread implemented 
+           
+           
+          
+           
+          }
+          catch (InterruptedException e) {
+             
+          }
+        }
+    }
+
      public Delivery_Feedback(int track, String nm, String dbn, int m1,int m2,int m3)
      {
           track_no = track;
@@ -21,7 +43,7 @@ public class Delivery_Feedback
           System.out.println("\nTracking Number : "+track_no);
           System.out.println("Customer Name    : "+cust_name);
           System.out.println("Delivery Person Name    : "+DeliBoy_name);
-          System.out.println("-----Feedbacks-------");
+          System.out.println("\n-----Feedbacks-------");
           System.out.println("Behaviour  : "+a);
           System.out.println("Punctuality  : "+b);
           System.out.println("Address Searching : "+c);
@@ -48,7 +70,7 @@ public class Delivery_Feedback
        }
        else if(sum > 15)
        {
-         System.out.println("Please enter feedbacks between 1 and 5 \n");
+         System.out.println("Please enter feedbacks between 1 and 5 ");
        }
           
        System.out.println("------------------");

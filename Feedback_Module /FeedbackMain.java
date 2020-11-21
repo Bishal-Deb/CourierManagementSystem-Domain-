@@ -24,6 +24,8 @@ class FeedbackMain
           m2 = sc.nextInt();
           m3 = sc.nextInt();
           Delivery_Feedback s = new Delivery_Feedback(track, nm, dbn, m1, m2, m3);
+     
+          s.Timer();
           s.display();
      }
 }
