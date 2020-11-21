@@ -16,14 +16,11 @@ public class Delivery_Feedback
          System.out.println(i+"  Seconds");
          try {
            i--;
-           Thread.sleep(1000L);     //thread implemented 
-           
-           
-          
+           Thread.sleep(1000L);     //thread implemented
            
           }
           catch (InterruptedException e) {
-             
+             System.out.println(e.getMessage());
           }
         }
     }
