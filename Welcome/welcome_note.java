@@ -1,6 +1,5 @@
 package Welcome;
 
-
 class welcome_note 
 {
 	public void display()
