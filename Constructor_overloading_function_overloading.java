@@ -108,7 +108,7 @@ public class Constructor_overloading_function_overloading
 		        empOne.info();
 		        details.info(empOne.getName());
 
-		        System.out.print("Want to add new order Details for sure? (y/n): ");
+		        System.out.print("Want to add new Details for sure? (y/n): ");
 		        ch= stdin.next();
 		       
 		    	} while(ch=="y" || ch == "Y");
