@@ -140,12 +140,7 @@ public class welcome extends welcome_note {
     
   }
   public static void main(String[] args) {
-    // System.out.println("\nWelcome to the Courier Management system");
-    // System.out.println("Author- Bishal Deb.");
-    // System.out.println("Register Number- 2047108.");
-    // System.out.println(".........................\n");
-
-    // loop through all arguments
+    
     for(String str: args) {
       System.out.println(str);
     }
