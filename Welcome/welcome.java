@@ -1,3 +1,4 @@
+package Welcome;
 import java.util.*;
 import java.io.*;
 
@@ -91,7 +92,7 @@ class Signup extends Admin {
 	System.out.println("\nHave a Nice Day!! " + super.name);
   }
 }
-public class welcome {
+public class welcome extends welcome_note {
   public static Admin getData(String method) {
     Scanner sc = new Scanner(System.in);
     System.out.println("------Enter Details------");
@@ -139,10 +140,10 @@ public class welcome {
     
   }
   public static void main(String[] args) {
-    System.out.println("\nWelcome to the Courier Management system");
-    System.out.println("Author- Bishal Deb.");
-    System.out.println("Register Number- 2047108.");
-    System.out.println(".........................\n");
+    // System.out.println("\nWelcome to the Courier Management system");
+    // System.out.println("Author- Bishal Deb.");
+    // System.out.println("Register Number- 2047108.");
+    // System.out.println(".........................\n");
 
     // loop through all arguments
     for(String str: args) {
@@ -155,8 +156,12 @@ public class welcome {
     Scanner sc = new Scanner(System.in);
     int ch, price;
 
+    welcome_note wn= new welcome_note();
+    wn.display();
+
       try{
           do {
+
               System.out.println("1.Register\n2.Login\n3.Display\n4.Exit");
               System.out.println("Your choice : ");
               ch = sc.nextInt();
