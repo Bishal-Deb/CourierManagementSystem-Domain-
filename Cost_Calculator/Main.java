@@ -10,7 +10,7 @@ public class Main {
         Cost_Calculator ob1= new Cost_Calculator();
         packing ob2= new packing();
         p.display();
-        Thread t1= new Thread(ob1);
+        Thread t1= new Thread(ob1);              //thread implementation
         Thread t2= new Thread(ob2);
         
         t2.start();
